@@ -11,14 +11,17 @@ import os
 app = Flask(__name__)
 CORS(app)
 
+# Get the correct model path dynamically
+model_path = os.path.join(os.getcwd(), "cnn_scoop.h5")
+
 # Load the trained model globally
-model_path = 'C:\Users\angelikadennise\Downloads\Bangus_\cnn_scoop.h5'
 try:
     model = tf.keras.models.load_model(model_path)
+    print(f"✅ Model loaded successfully from: {model_path}")
 except Exception as e:
-    model = None
-    print(f"Error loading model: {e}")
-
+    print(f"❌ Error loading model: {e}")
+    model = None  # Prevents crashes if the model isn't found
+    
 # List of class names (must match the model's output)
 class_names = ["Aeromonas Hydrophila", "Normal Milkfish", "Vibrio Harveyi"]
 
