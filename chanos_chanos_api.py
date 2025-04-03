@@ -12,7 +12,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Load the trained model globally
-model_path = 'C:/Users/angelikadennise/Downloads/cnn_scoop.h5'
+model_path = 'C:/Users/angelikadennise/Downloads/Bangus_/cnn_scoop.h5'
 try:
     model = tf.keras.models.load_model(model_path)
 except Exception as e:
