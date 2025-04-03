@@ -6,7 +6,6 @@ import numpy as np
 import cv2  # For real-time video capture
 from io import BytesIO
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 
 # Initialize Flask app
 app = Flask(__name__)
